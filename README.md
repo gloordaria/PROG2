@@ -1,5 +1,5 @@
 Projektidee Daria Gloor
---> Credit und Lernufwandrechner für das Studium
+--> Lernufwandrechner für das Studium
 
 Ausgangslage:
 Jedes Modul im Studium ist mit sogenannten Credits gewichtet. Je nach Höhe der Credits ist der empfohlene Lernaufwand unterschriedlich.
