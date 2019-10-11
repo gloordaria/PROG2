@@ -1,0 +1,26 @@
+lar data = {
+	"prog2_sem3": {
+		"credits":  "",
+		"kontakt_unterricht": 37,
+		"selbststudium": (credits * 40) - kontakt_unterricht,
+		"lernzeit": [
+			{
+				"datum": "datum",
+				"Minuten": 22,
+				"Kommentar": "Kommentar"
+			},
+			{
+				"datum": "datum",
+				"Minuten": 22,
+				"Kommentar": "Kommentar"
+			}
+		]
+	}
+}
+
+
+
+###########################
+lernzeit_insgesamt = 0
+for eintrag in lar_data["prog2_sem3"]["lernzeit"]:
+    lernzeit_insgesamt += eintrag["Minuten"]
