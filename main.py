@@ -6,9 +6,22 @@ from flask import url_for
 
 app = Flask("Lernaufwandrechner")
 
-@app.route("/startseite")
+@app.route("/")
 def startseite():
-    return url_for("startseite.html")
+    return render_template('startseite.html')
+
+
+@app.route("/modulerfassen")
+def modulerfassen():
+    return render_template("modulerfassen.html")
+
+@app.route("/moduluebersicht")
+def moduluebersicht():
+    return render_template("moduluebersicht.html")
+
+@app.route("/lernzeit")
+def lernzeit():
+    return render_template("lernzeit.html")
 
 
 if __name__ == "__main__":

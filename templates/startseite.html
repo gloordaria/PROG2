@@ -1,23 +1,34 @@
 
-{% extends "index.html" %}
+{% include "header.html" %}
+{% include "navigation.html" %}
 
 <head> 
-    <title>Willkommen im Lernaufwandrechner</title>
+    <title>Lernaufwandrechner</title>
 </head>
 
-<body style="background-image:url(Hintergrundbild Startseite.jpg)"></body>
+<body style="
+    background-image:url({{ url_for('static', filename='Hintergrundbild_Startseite.jpg') }});
+    background-size: cover;
+    background-repeat: no-repeat;"></body>
 
+
+<h1>Willkommen im Lernaufwandrechner</h1>
 <div>
     <b>Mit diesem Lernaufwandrechner haben Sie jederzeit den Überblick, wie viel Sie noch für ein Modul aufwenden müssen und 
     erhalten nach Erhalt der Modulnote eine Auswertung über Ihren Aufwand und Ertrag</b>
-        <button type="button" class="btn btn-primary btn-lg">Ein neues Modul erfassen</button>
-        <button type="button" class="btn btn-primary btn-lg">Zur Modulübersicht</button>
+        
+        <a class="btn btn-primary btn-lg" href="{{ url_for('modulerfassen') }}">Ein neues Modul erfassen</a>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('moduluebersicht') }}">Zur Modulübersicht</a>
+        
 </div>
 
 
+{%include "footer.html" %}
 
 
-<!--Beispiel von Elia-->
+
+
+<!--Beispiel von Elia
 <div class="container mt-5">
     <div class="row">
         <div class="col-12 mb-3">
@@ -36,4 +47,4 @@
         {% endif %}
     </div>
 </div>
-{% endblock %}
+-->

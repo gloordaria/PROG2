@@ -1,6 +1,5 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ url_for('index.html') }}">Lernaufwand</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -12,11 +11,12 @@
                 <a class="nav-link" href="{{ url_for('startseite') }}">Start</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('moduluebersicht') }}">Modulübersicht</a>
+                <a class="nav-link" href="{{ url_for('lernzeit') }}">Modul erfassen</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('lernaufwand') }}">Modul erfassen</a>
+                <a class="nav-link" href="{{ url_for('moduluebersicht') }}">Modulübersicht</a>
             </li>
+            
         </ul>
     </div>
 </nav>
