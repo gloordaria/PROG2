@@ -18,8 +18,6 @@ lar data = {
 	}
 }
 
-
-
 ###########################
 lernzeit_insgesamt = 0
 for eintrag in lar_data["prog2_sem3"]["lernzeit"]:

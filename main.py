@@ -6,7 +6,7 @@ from flask import url_for
 
 app = Flask("Lernaufwandrechner")
 
-@app.route("/")
+@app.route("/startseite")
 def startseite():
     return url_for("startseite.html")
 

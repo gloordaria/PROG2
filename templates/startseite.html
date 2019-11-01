@@ -1,34 +1,20 @@
 
 {% extends "index.html" %}
 
-{% block title %}Willkommen im Lernaufwandrechner!{% endblock %}
+<head> 
+    <title>Willkommen im Lernaufwandrechner</title>
+</head>
+
+<body style="background-image:url(Hintergrundbild Startseite.jpg)"></body>
+
+<div>
+    <b>Mit diesem Lernaufwandrechner haben Sie jederzeit den Überblick, wie viel Sie noch für ein Modul aufwenden müssen und 
+    erhalten nach Erhalt der Modulnote eine Auswertung über Ihren Aufwand und Ertrag</b>
+        <button type="button" class="btn btn-primary btn-lg">Ein neues Modul erfassen</button>
+        <button type="button" class="btn btn-primary btn-lg">Zur Modulübersicht</button>
+</div>
 
 
-{% block main %}
-
-<b>Mit diesem Lernaufwandrechner haben Sie jederzeit den Überblick, wie viel Sie noch für ein Modul aufwenden müssen und erhalten nach Erhalt der Modulnote eine Auswertung über Ihren Aufwand und Ertrag</b>
-    	<a class="btn btn-primary" href="#" role="button">Ein neues Modul erfassen</a>
-
-
-	<h2>Bitte erfassen Sie hier ein neues Portfolio</h2>
-	<form>
-  		<div class="form-group">
-    		<label for="exampleFormControlInput1">Modulname</label>
-    		<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name des Moduls">
-  		</div>
-  		
-  		<div class="form-group">
-    		<label for="exampleFormControlSelect1">Anzahl Credits</label>
-    		<select class="form-control" id="exampleFormControlSelect1">
-	      		<option>1</option>
-	      		<option>2</option>
-	      		<option>3</option>
-	      		<option>4</option>
-	      		<option>5</option>
-	      		<option>6</option>
-    		</select>
-  		</div>
-  		<a class="btn btn-primary" href="#" role="button">Bestätigen</a>
 
 
 <!--Beispiel von Elia-->
