@@ -23,6 +23,10 @@ def moduluebersicht():
 def lernzeit():
     return render_template("lernzeit.html")
 
+@app.route("lernzeitdetail")
+def lernzeitdetail():
+    return render_template("lernzeitdetail.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

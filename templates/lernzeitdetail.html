@@ -1,0 +1,42 @@
+{% include "header.html" %}
+{% include "navigation.html" %}
+
+<div class="table-responsive-sm">
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Datum</th>         <!--Spaltenkopf erste Spalte-->
+              <th scope="col">Lernzeit</th>        <!--Spaltenkopf zweite Spalte--> 
+              <th scope="col">Kommentare</th>
+              
+            </tr>
+            <tbody>
+                <tr>
+                  <th scope="row">Datum</th>     <!--Platzhalter für Verlinkung -> Datum aus lernzeit.html-->
+                  <td>Lernzeit</td>              <!--Platzhalter für Verlinkung -> Berechnung Lernzeit aus lernzeit.html (Stunden plus Minuten)S-->
+                  <td>Kommentare</td>            <!--Platzhalter für Verlinkung -> Kommentare aus lernzeit.html-->
+                  
+                </tr>
+          </thead>
+    </table>
+  </div>
+  
+  <div class="table-responsive-md">
+    <table class="table">
+      ...
+    </table>
+  </div>
+  
+  <div class="table-responsive-lg">
+    <table class="table">
+      ...
+    </table>
+  </div>
+  
+  <div class="table-responsive-xl">
+    <table class="table">
+      ...
+    </table>
+  </div>
+
+{% include "footer.html" %}
