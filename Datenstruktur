@@ -1,8 +1,8 @@
 lar data = {
 	"prog2_sem3": {
 		"credits":  "",
-		"kontakt_unterricht": 37,
-		"selbststudium": (credits * 40) - kontakt_unterricht,
+		"kontakt_unterricht": "",
+		"selbststudium": (credits * 30) - kontakt_unterricht,
 		"lernzeit": [
 			{
 				"datum": "datum",

@@ -23,7 +23,7 @@ def moduluebersicht():
 def lernzeit():
     return render_template("lernzeit.html")
 
-@app.route("lernzeitdetail")
+@app.route("/lernzeitdetail")
 def lernzeitdetail():
     return render_template("lernzeitdetail.html")
 

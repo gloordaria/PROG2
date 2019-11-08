@@ -8,7 +8,7 @@
 <form>
       <div class="form-group">
         <label for="exampleFormControlInput1">Modulname</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name des Moduls">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name des Moduls" required>
       </div>
       
       <div class="form-group">
@@ -39,11 +39,11 @@
 
       <div class="form-group">
         <label for="exampleFormControlInput1">Anzahl Vorlesungen pro Semester</label>
-        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Anzahl Vorlesungen">
+        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Anzahl Vorlesungen" required >
       </div>
 
-
-      <a class="btn btn-primary" href="#" role="button">Bestätigen</a>
+      <button class="btn btn-primary" type="submit">Bestätigen</button>
+      
 
 {% include "footer.html" %}
    
