@@ -5,15 +5,16 @@
   <title>Neues Modul erfassen</title>
 </head>
 
-<form>
+
+<form method="POST">
       <div class="form-group">
         <label for="exampleFormControlInput1">Modulname</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name des Moduls" required>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="modulname" placeholder="Name des Moduls" required>
       </div>
       
       <div class="form-group">
         <label for="exampleFormControlSelect1">Anzahl Credits</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" id="exampleFormControlSelect1" name="credits">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -25,7 +26,7 @@
 
       <div class="form-group">
         <label for="exampleFormControlSelect1">Semester</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" id="exampleFormControlSelect1" name="semester">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -39,7 +40,7 @@
 
       <div class="form-group">
         <label for="exampleFormControlInput1">Anzahl Vorlesungen pro Semester</label>
-        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Anzahl Vorlesungen" required >
+        <input type="number" class="form-control" id="exampleFormControlInput1" name="vorlesungen" placeholder="Anzahl Vorlesungen" required >
       </div>
 
       <button class="btn btn-primary" type="submit">Bestätigen</button>
