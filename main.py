@@ -26,8 +26,8 @@ def moduluebersicht():
     return render_template("moduluebersicht.html")
 
 
-@app.route("/lernzeit")
-def lernzeit():
+@app.route("/lernzeit_erfassen")
+def lernzeit_erfassen():
     if request.method == 'POST':
         datum = request.form['datum']
         lernzeit = request.form['lernzeit']
