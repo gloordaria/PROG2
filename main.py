@@ -3,6 +3,7 @@ from flask import render_template
 from flask import redirect
 from flask import request
 from flask import url_for
+from libs import datenlesen
 
 app = Flask("Lernaufwandrechner")
 
@@ -18,6 +19,7 @@ def modulerfassen():
         credits = request.form['credits']
         semester = request.form['semester']
         vorlesungen = request.form['vorlesungen']
+        returned_data = datenlesen.modul_speichern(modulname, credits, semester, vorlesungen)
     return render_template("modulerfassen.html")
 
 
