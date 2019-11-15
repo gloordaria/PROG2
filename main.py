@@ -3,7 +3,8 @@ from flask import render_template
 from flask import redirect
 from flask import request
 from flask import url_for
-from libs import datenlesen
+from libs import datenspeichern_modul
+from libs import datenspeichern_lernzeit
 
 app = Flask("Lernaufwandrechner")
 
@@ -19,7 +20,7 @@ def modulerfassen():
         credits = request.form['credits']
         semester = request.form['semester']
         vorlesungen = request.form['vorlesungen']
-        returned_data = datenlesen.modul_speichern(modulname, credits, semester, vorlesungen)
+        returned_data = datenspeichern_modul.modul_speichern(modulname, credits, semester, vorlesungen)
     return render_template("modulerfassen.html")
 
 
@@ -33,6 +34,7 @@ def lernzeit_erfassen():
     if request.method == 'POST':
         datum = request.form['datum']
         lernzeit = request.form['lernzeit']
+        returned_data = datenspeichern_lernzeit.lernzeit_speichern(datum, lernzeit)
     return render_template("lernzeit.html")
 
 
