@@ -24,6 +24,10 @@ def modulerfassen():
     return render_template("modulerfassen.html")
 
 
+@app.route("/modulbearbeiten", methods=['GET', 'POST'])
+def modulbearbeiten():
+    return render_template("modulbearbeiten.html")
+
 @app.route("/moduluebersicht")
 def moduluebersicht():
     return render_template("moduluebersicht.html")
@@ -35,7 +39,7 @@ def lernzeit_erfassen():
         datum = request.form['datum']
         lernzeit = request.form['lernzeit']
         returned_data = datenspeichern_lernzeit.lernzeit_speichern(datum, lernzeit)
-    return render_template("lernzeit.html")
+    return render_template("lernzeit_erfassen.html")
 
 
 @app.route("/lernzeitdetail")

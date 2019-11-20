@@ -18,12 +18,12 @@
             <tbody>
                 <tr>
                   <th scope="row">Semester</th>     <!--Platzhalter für Verlinkung -> Semester aus Modulerfassung-->
-                  <td>Modulname</td>                <!--Platzhalter für Verlinkung -> Modulname aus Modulerfassung-->
+                  <td><a href="{{ url_for('modulbearbeiten') }}">Modulname</a></td>                <!--Platzhalter für Verlinkung -> Modulname aus Modulerfassung-->
                   <td>Credits</td>                  <!--Platzhalter für Verlinkung -> Credits aus Modulerfassung-->
                   <td>Aufwand insgesammt</td>       <!--Platzhalter für Verlinkung -> Allgemeiner Aufwand berechnen ((Anzahl Credits*30) - (Anzahl Vorlesungen*1)-->
-                  <td>Lernaufwand</td>              <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand (Credits mal xx h--> 
+                  <td><a href="{{ url_for('lernzeitdetail') }}">Lernaufwand</a></td>              <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand (Credits mal xx h--> 
                   <td>verbliebende Zeit</td>        <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand - summe Lernzeit-->
-                  <td>input Modulnote</td>          <!--Platzhalter für Verlinkung -> Benutzereingabe Modulnote-->
+                  <td><a href="{{ url_for('modulbearbeiten') }}">Modulnote</a></td>          <!--Platzhalter für Verlinkung -> Benutzereingabe Modulnote-->
                 </tr>
           </thead>
     </table>
