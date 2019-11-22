@@ -18,9 +18,10 @@
         <a class="btn btn-primary btn-lg" href="{{ url_for('modulerfassen') }}">Ein neues Modul erfassen</a>
         <a class="btn btn-primary btn-lg" href="{{ url_for('moduluebersicht') }}">Zur Modulübersicht</a>
         
+    </div>
 </div>
 
-    </div>
+
 
 
 {%include "footer.html" %}
@@ -28,23 +29,3 @@
 
 
 
-<!--Beispiel von Elia
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-12 mb-3">
-            <h1>Lernaufwandrechner</h1>
-            <hr>
-        </div>
-        {% if telbuch %}
-            {% for key, value in telbuch.items() %}
-                <div class="col-12 mb-3">
-                    <h6>{{ value['name'] }}</h6>
-                    <p>{{ value['telefon']}}</p>
-                </div>
-            {% endfor %}
-        {% else %}
-                <h3>Keine Einträge vorhanden</h3>
-        {% endif %}
-    </div>
-</div>
--->

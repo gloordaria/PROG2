@@ -33,7 +33,4 @@ def modul_speichern(modulname, credits, semester, vorlesungen ):
 
 
 
-
-
-
 # youtube-Tutorial dazu: https://www.youtube.com/watch?v=drord9gbr3Y

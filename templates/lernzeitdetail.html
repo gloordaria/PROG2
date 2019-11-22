@@ -1,36 +1,42 @@
 {% include "header.html" %}
 {% include "navigation.html" %}
 
-
-
-
-
+<h2>Wie viel Zeit hast du heute für das Modul aufgewendet?</h2>
+<p></p>
 
 <form method="POST">
-  <div class="col-12">
-    <p>Wie viel Zeit hast du heute für das Modul aufgewendet?</p>
-
-    <div class="row">
-      <div class="col-2">
-        <label for="exampleFormControlInput1">Datum</label>
-        <input type="date" class="form-control" name="datum" placeholder="Datum" required>
-      </div>
-
-      <div class="col-2">
-        <label for="exampleFormControlInput1">Anzahl Lernminuten</label>
-        <input type="number" class="form-control" name = "lernzeit" placeholder="Anzahl Minuten" required>
-      </div>
+  <div class = "row">
+    <div class="col-2">
+      <label for="exampleFormControlInput1">Datum</label>
+      <input type="date" class="form-control" name="datum" placeholder="Datum" required>
+    </div>
+    <div class="col-2">
+      <label for="exampleFormControlInput1">Anzahl Lernminuten</label>
+      <input type="number" class="form-control" name = "lernzeit" placeholder="Anzahl Minuten" required>
     </div>
   </div>
 
-  <div class="col-10">
-    <label for="exampleFormControlTextarea1">Kommentare</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> 
+  <div class = "row"><p></p></div>
+  
+  <div class = "row">
+    <div class="col-4">
+      <label for="exampleFormControlTextarea1">Kommentare</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" name="Kommentare" row="3"> </textarea>
+    </div>
   </div>
+  
+  <div class = "row"><p></p></div>
 
-  <button class="btn btn-primary" type="submit">Erfassen</button>
+  <div class="row">
+    <div class="col-2">
+      <button class="btn btn-primary" type="submit">Erfassen</button>
+    </div>
+  </div>
 </form>
-      
+
+<br></br>
+
+<!--Auflistung Lernzeiten-->
 
 <div class="table-responsive-sm">
     <table class="table">
