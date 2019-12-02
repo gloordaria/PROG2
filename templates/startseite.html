@@ -3,9 +3,10 @@
 
 
 <body style="
-    background-image:url({{ url_for('static', filename='Hintergrundbild_Startseite2.jpg') }});
+    background-image: url({{ url_for('static', filename='Hintergrundbild_Startseite2.jpg') }});
     background-size: cover;
-    background-repeat: no-repeat;"></body>
+    background-repeat: no-repeat;">
+</body>
 
     <div class="container">
         <br>
@@ -19,9 +20,6 @@
         <a class="btn btn-primary btn-lg" href="{{ url_for('moduluebersicht') }}">Zur Modulübersicht</a>
         
     </div>
-</div>
-
-
 
 
 {%include "footer.html" %}

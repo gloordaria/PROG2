@@ -22,13 +22,11 @@ def modul_speichern(modulname, credits, semester, vorlesungen ):
     liste_aller_module.append(modul)
         
     formular_eingaben["modul_erfassen"] = liste_aller_module
-    return formular_eingaben       #Json-Datei mit neuer Eingabe wird zurückgegeben
+    return formular_eingaben           #Json-Datei mit neuer Eingabe wird zurückgegeben
 
 
     with open('data/data.json', "w") as open_file:
         json.dump(formular_eingaben, open_file)
-
-
 
 
 
