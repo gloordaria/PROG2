@@ -15,17 +15,19 @@ def startseite():
 @app.route("/modulerfassen", methods=['GET', 'POST'])
 def modulerfassen():
     if request.method == 'POST':
+        print(request.form)
         modulname = request.form['modulname']
-        credits = request.form['credits']
+        credit = request.form['credits']
         semester = request.form['semester']
         vorlesungen = request.form['vorlesungen']
-        returned_data = datenspeichern_modul.modul_speichern(modulname, credits, semester, vorlesungen)
+        returned_data = datenspeichern_modul.modul_speichern(modulname, credit, semester, vorlesungen)
     return render_template("modulerfassen.html")
 
 
 @app.route("/moduluebersicht")
 def moduluebersicht():
-    return render_template("moduluebersicht.html")
+    modul_daten = datenspeichern_modul.load_json()
+    return render_template("moduluebersicht.html", daten=modul_daten)
 
 
 @app.route("/modulbearbeiten", methods=['GET', 'POST'])

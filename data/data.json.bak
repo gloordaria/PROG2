@@ -1,0 +1,38 @@
+{
+    "module": [{}
+        {
+        "modulname": "",
+        "credits": "",
+        "semester": "",
+        "vorlesungen": ""
+        }
+    ],
+     
+    "lernzeit_erfassen": [
+        {
+        "datum": "" ,
+        "lernzeit": ""
+        }  
+    ]
+}
+
+
+{
+    'module': {
+        'modulname': {
+            'modulname': '', 
+            'credits': '', 
+            'semester': '', 
+            'vorlesungen': ''
+
+            "lernzeit": [
+                {"datum": "12.12.2019" , "dauer": "60"}, {"datum": "15.12.2019" , "dauer": "10"}  
+            ]
+        }
+    }
+}
+
+
+
+
+
