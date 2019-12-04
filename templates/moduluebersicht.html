@@ -3,6 +3,7 @@
 
 <div class="container">
 <div class="table-responsive-sm mt-5">
+  {% if daten %}
     <table class="table">
         <thead>
             <tr>
@@ -13,20 +14,26 @@
               <th scope="col">Lernaufwand (h/min)</th>
               <th scope="col">Verbliebene Zeit (h/min)</th>
               <th scope="col">Modulnote</th>
-              
             </tr>
             <tbody>
+                {% for modul in daten['module'].values()%}
                 <tr>
-                  <th scope="row">Semester</th>     <!--Platzhalter für Verlinkung -> Semester aus Modulerfassung-->
-                  <td><a href="{{ url_for('modulbearbeiten') }}">Modulname</a></td>                <!--Platzhalter für Verlinkung -> Modulname aus Modulerfassung-->
-                  <td>Credits</td>                  <!--Platzhalter für Verlinkung -> Credits aus Modulerfassung-->
-                  <td>Aufwand insgesammt</td>       <!--Platzhalter für Verlinkung -> Allgemeiner Aufwand berechnen ((Anzahl Credits*30) - (Anzahl Vorlesungen*1)-->
-                  <td><a href="{{ url_for('lernzeitdetail') }}">Lernaufwand</a></td>              <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand (Credits mal xx h--> 
+                  {{modul}}
+                  <th scope="row">{{modul['semester']}}</th>     <!--Platzhalter für Verlinkung -> Semester aus Modulerfassung-->
+                  <td><a href="{{ url_for('modulbearbeiten') }}"></a>{{modul['modulname']}}</td>                <!--Platzhalter für Verlinkung -> Modulname aus Modulerfassung-->
+                  <td>{{modul['credits']}}</td>                  <!--Platzhalter für Verlinkung -> Credits aus Modulerfassung-->
+                  <td>{{(modul['credits']*1800 - modul['vorlesungen']*60)/60}} Stunden</td>       <!--Platzhalter für Verlinkung -> Allgemeiner Aufwand berechnen ((Anzahl Credits*30) - (Anzahl Vorlesungen*1)-->
+                  <td><a href="{{ url_for('lernzeitdetail', modul_name=modul['modulname']) }}">Lernaufwand</a></td>              <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand (Credits mal xx h--> 
                   <td>verbliebende Zeit</td>        <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand - summe Lernzeit-->
                   <td><a href="{{ url_for('modulbearbeiten') }}">Modulnote</a></td>          <!--Platzhalter für Verlinkung -> Benutzereingabe Modulnote-->
                 </tr>
+                {% endfor %}
+
           </thead>
     </table>
+    {% else %}
+    <h1>Keine Module erfasst</h1>
+    {% endif %}
   </div>
 </div>
 

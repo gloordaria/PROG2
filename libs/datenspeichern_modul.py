@@ -7,9 +7,9 @@ def modul_speichern(modulname, credit, semester, vorlesungen ):
         
     modul = {
         "modulname": modulname,
-        "credits": credit,
-        "semester": semester,
-        "vorlesungen": vorlesungen
+        "credits": int(credit),
+        "semester": int(semester),
+        "vorlesungen": int(vorlesungen)
     }
         
     liste_aller_module[modulname] = modul

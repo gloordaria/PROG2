@@ -41,13 +41,13 @@ def modulbearbeiten():
     return render_template("modulbearbeiten.html")
 
 
-@app.route("/lernzeitdetail")
-def lernzeitdetail():
+@app.route("/lernzeitdetail/<modul_name>")
+def lernzeitdetail(modul_name):          #Parameter um die Lernzeit des richtigen Moduls zu bearbeiten
+    print(modul_name)
     if request.method == 'POST':
         datum = request.form['datum']
         lernzeit = request.form['lernzeit']
     return render_template("lernzeitdetail.html")
-
 
 
 
