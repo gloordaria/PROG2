@@ -20,7 +20,7 @@
                 <tr>
                   {{modul}}
                   <th scope="row">{{modul['semester']}}</th>     <!--Platzhalter für Verlinkung -> Semester aus Modulerfassung-->
-                  <td><a href="{{ url_for('modulbearbeiten') }}"></a>{{modul['modulname']}}</td>                <!--Platzhalter für Verlinkung -> Modulname aus Modulerfassung-->
+                  <td><a href="{{ url_for('modulbearbeiten') }}">{{modul['modulname']}}</a></td> 
                   <td>{{modul['credits']}}</td>                  <!--Platzhalter für Verlinkung -> Credits aus Modulerfassung-->
                   <td>{{(modul['credits']*1800 - modul['vorlesungen']*60)/60}} Stunden</td>       <!--Platzhalter für Verlinkung -> Allgemeiner Aufwand berechnen ((Anzahl Credits*30) - (Anzahl Vorlesungen*1)-->
                   <td><a href="{{ url_for('lernzeitdetail', modul_name=modul['modulname']) }}">Lernaufwand</a></td>              <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand (Credits mal xx h--> 

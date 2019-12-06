@@ -17,7 +17,7 @@ def modul_speichern(modulname, credit, semester, vorlesungen ):
     json_daten["module"] = liste_aller_module
 
     save_to_json(json_daten)
-    return json_daten           #Json-Datei mit neuer Eingabe wird zurückgegeben
+    return json_daten                        #Json-Datei mit neuer Eingabe wird zurückgegeben
 
 def load_json():
     json_daten = {}

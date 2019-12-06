@@ -1,1 +1,1 @@
-{"module": {"test": {"modulname": "test", "credits": 1, "semester": 1, "vorlesungen": 12}}}
+{"module": {"test": {"modulname": "test", "credits": 1, "semester": 1, "vorlesungen": 12}, "prog2 - test": {"modulname": "prog2 - test", "credits": 1, "semester": 1, "vorlesungen": 4}}, "lernzeiten": {"2019-12-06": {"datum": "2019-12-06", "lernzeit": "60", "kommentare": "test"}, "2019-12-07": {"datum": "2019-12-07", "lernzeit": "60", "kommentare": "test 123"}}}

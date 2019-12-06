@@ -1,79 +1,71 @@
 {% include "header.html" %}
 {% include "navigation.html" %}
 
-<h2>Wie viel Zeit hast du heute für das Modul aufgewendet?</h2>
-<p></p>
 
-<form method="POST">
-  <div class = "row">
-    <div class="col-2">
-      <label for="exampleFormControlInput1">Datum</label>
-      <input type="date" class="form-control" name="datum" placeholder="Datum" required>
+<div class="container">
+<div class="table-responsive-sm mt-5">
+  <h2>Wie viel Zeit hast du heute für das Modul aufgewendet?</h2>
+  <p></p>
+
+  <form method="POST">
+    <div class = "row">
+      <div class="col-2">
+        <label for="exampleFormControlInput1">Datum</label>
+        <input type="date" class="form-control" name="datum" placeholder="Datum" required>
+      </div>
+      
+      <div class="col-2">
+        <label for="exampleFormControlInput1">Anzahl Lernminuten</label>
+        <input type="number" class="form-control" name = "lernzeit" placeholder="Anzahl Minuten" required>
+      </div>
     </div>
-    <div class="col-2">
-      <label for="exampleFormControlInput1">Anzahl Lernminuten</label>
-      <input type="number" class="form-control" name = "lernzeit" placeholder="Anzahl Minuten" required>
+
+    <div class = "row"><p></p></div>
+    
+    <div class = "row">
+      <div class="col-4">
+        <label for="exampleFormControlTextarea1">Kommentare</label>
+        <input type="text" class="form-control" id="exampleFormControlTextarea1" name="kommentare" row="3">
+      </div>
     </div>
-  </div>
+    
+    <div class = "row"><p></p></div>
 
-  <div class = "row"><p></p></div>
-  
-  <div class = "row">
-    <div class="col-4">
-      <label for="exampleFormControlTextarea1">Kommentare</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" name="Kommentare" row="3"> </textarea>
+    <div class="row">
+      <div class="col-2">
+        <button class="btn btn-primary" type="submit">Erfassen</button>
+      </div>
     </div>
-  </div>
-  
-  <div class = "row"><p></p></div>
+  </form>
 
-  <div class="row">
-    <div class="col-2">
-      <button class="btn btn-primary" type="submit">Erfassen</button>
-    </div>
-  </div>
-</form>
+  <br></br>
 
-<br></br>
-
-<!--Auflistung Lernzeiten-->
-
-<div class="table-responsive-sm">
+  <!--Auflistung Lernzeiten-->
+  <div class="table-responsive-sm mt-5"></div>
+  {%if daten%}    
     <table class="table">
         <thead>
             <tr>
               <th scope="col">Datum</th>         <!--Spaltenkopf erste Spalte-->
               <th scope="col">Lernzeit</th>        <!--Spaltenkopf zweite Spalte--> 
               <th scope="col">Kommentare</th>
-              
-            </tr>
+            </tr>              
             <tbody>
+              {% for lerneintrag in daten['lernzeiten'].values()%}
                 <tr>
-                  <th scope="row">Datum</th>     <!--Platzhalter für Verlinkung -> Datum aus lernzeit.html-->
-                  <td>Lernzeit</td>              <!--Platzhalter für Verlinkung -> Berechnung Lernzeit aus lernzeit.html (Stunden plus Minuten)S-->
-                  <td>Kommentare</td>            <!--Platzhalter für Verlinkung -> Kommentare aus lernzeit.html-->
+                  {{lerneintrag}}   <!-- Daten printen -->
                   
+                  <th scope="row">{{lerneintrag['datum']}}</th>     
+                  <td>></a>{{lerneintrag['lernzeit']}}</td>                
+                  <td>{{lerneintrag['kommentare']}}</td>                          
                 </tr>
+                {% endfor %}
           </thead>
     </table>
-  </div>
-  
-  <div class="table-responsive-md">
-    <table class="table">
-      ...
-    </table>
-  </div>
-  
-  <div class="table-responsive-lg">
-    <table class="table">
-      ...
-    </table>
-  </div>
-  
-  <div class="table-responsive-xl">
-    <table class="table">
-      ...
-    </table>
-  </div>
-
+    {% else %}
+    <h1>Keine Lerneinträge erfasst</h1>
+    {% endif %}
+                
+</div>
+</div>
 {% include "footer.html" %}
