@@ -1,20 +1,28 @@
 import json
+from libs import datenspeichern_modul
+from datetime import datetime
 
-def zeit_speichern(datum, lernzeit, kommentare):
-
+def zeit_speichern(modul_name, datum, lernzeit, kommentare):
+    modul_daten = datenspeichern_modul.load_json()
     json_daten = load_json()
-    liste_lernzeiten = json_daten.get("lernzeiten", {})
-        
+    #liste_lernzeiten = json_daten.get("lernzeiten", {})
+    
     lerneintrag = {
         "datum": datum,
         "lernzeit": lernzeit, 
         "kommentare": kommentare 
     }
 
-    liste_lernzeiten[datum] = lerneintrag                  #--> fraglich ob das Sinn macht, da Datum als Key gelten würde
-    json_daten["lernzeiten"] = liste_lernzeiten
+    zeitstempel = str(datetime.now())
+    modul_daten["module"][modul_name]["lernzeiten"][zeitstempel] = lerneintrag
 
+
+    # liste_lernzeiten[datum] = lerneintrag                  #--> fraglich ob das Sinn macht, da Datum als Key gelten würde
+    #json_daten["lernzeiten"] = liste_lernzeiten
+
+    json_daten["module"] = modul_daten["module"]
     save_to_json(json_daten)
+
     return json_daten
 
 

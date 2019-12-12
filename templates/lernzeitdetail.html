@@ -53,10 +53,8 @@
             <tbody>
               {% for lerneintrag in daten['lernzeiten'].values()%}
                 <tr>
-                  {{lerneintrag}}   <!-- Daten printen -->
-                  
                   <th scope="row">{{lerneintrag['datum']}}</th>     
-                  <td>></a>{{lerneintrag['lernzeit']}}</td>                
+                  <td>{{lerneintrag['lernzeit']}}</td>                
                   <td>{{lerneintrag['kommentare']}}</td>                          
                 </tr>
                 {% endfor %}

@@ -46,17 +46,18 @@ def modulbearbeiten():
 
 @app.route("/lernzeitdetail/<modul_name>", methods=['GET', 'POST'])
 def lernzeitdetail(modul_name):                   #Parameter um die Lernzeit des richtigen Moduls zu bearbeiten
-    print(modul_name)
     #Diesen Teil brauche ich für die Variabelverwendung in der Python-Datei: datenspeichern_lernzeit
     if request.method == 'POST':
         datum = request.form['datum']
         lernzeit = request.form['lernzeit']
         kommentare = request.form['kommentare']
-        returned_data = datenspeichern_lernzeit.zeit_speichern(datum, lernzeit, kommentare)
+        returned_data = datenspeichern_lernzeit.zeit_speichern(modul_name, datum, lernzeit, kommentare)
+        #return returned_data
     
     #Diesen Teil brauche ich um die Daten in der html-Datei moduluebersicht.html in die Liste zu speichern
     lernzeit_daten = datenspeichern_modul.load_json()
-    return render_template("lernzeitdetail.html", daten=lernzeit_daten)
+    #return lernzeit_daten
+    return render_template("lernzeitdetail.html", daten=lernzeit_daten['module'][modul_name])
 
 
 
