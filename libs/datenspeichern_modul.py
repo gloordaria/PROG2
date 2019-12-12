@@ -10,6 +10,7 @@ def modul_speichern(modulname, credit, semester, vorlesungen ):
         "credits": int(credit),
         "semester": int(semester),
         "vorlesungen": int(vorlesungen),
+        "lernzeit_gesamt": int(0),
         "lernzeiten": {}
     }
         

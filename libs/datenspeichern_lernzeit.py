@@ -16,6 +16,8 @@ def zeit_speichern(modul_name, datum, lernzeit, kommentare):
     zeitstempel = str(datetime.now())
     modul_daten["module"][modul_name]["lernzeiten"][zeitstempel] = lerneintrag
 
+    lernzeit_gesamt = int(modul_daten["module"][modul_name]["lernzeit_gesamt"]) + int(lernzeit)
+    modul_daten["module"][modul_name]["lernzeit_gesamt"] = lernzeit_gesamt
 
     # liste_lernzeiten[datum] = lerneintrag                  #--> fraglich ob das Sinn macht, da Datum als Key gelten würde
     #json_daten["lernzeiten"] = liste_lernzeiten
