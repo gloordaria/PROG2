@@ -1,9 +1,9 @@
 {% include "header.html" %}
 {% include "navigation.html" %}
 
-
 <div class="container">
 <div class="table-responsive-sm mt-5">
+  
   <h2>Wie viel Zeit hast du heute für das Modul aufgewendet?</h2>
   <p></p>
 
@@ -30,13 +30,10 @@
     </div>
     
     <div class = "row"><p></p></div>
-
-    <div class="row">
-      <div class="col-2">
-        <button class="btn btn-primary" type="submit">Erfassen</button>
-      </div>
-    </div>
   </form>
+
+  <button class="btn btn-primary" type="submit">Erfassen</button>
+  <a class="btn btn-primary" href="{{ url_for('moduluebersicht') }}">Zur Modulübersicht</a>
 
   <br></br>
 
