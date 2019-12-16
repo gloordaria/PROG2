@@ -5,12 +5,13 @@ from flask import request
 from flask import url_for
 from libs import datenspeichern_modul
 from libs import datenspeichern_lernzeit
+from libs import modul_bearbeiten
 
 app = Flask("Lernaufwandrechner")
 
 @app.route("/")
 def startseite():
-    return render_template('startseite.html')
+    return render_template('startseite.html')     #Diese Funktion gibt die Startseite zurück
 
 
 @app.route("/modulerfassen", methods=['GET', 'POST'])
