@@ -20,12 +20,12 @@
                 {% for modul in daten['module'].values()%}
                 <tr>
                   <th scope="row">{{modul['semester']}}</th>     <!--Semester -->
-                  <td><a href="{{ url_for('modulbearbeiten') }}">{{modul['modulname']}}</a></td> <!-- Modulname mit Verlinkung zu Modulbearbeiten-->
+                  <td><a href="{{ url_for('modulbearbeiten', modul_name=modul['modulname']) }}">{{modul['modulname']}}</a></td> <!-- Modulname mit Verlinkung zu Modulbearbeiten-->
                   <td>{{modul['credits']}}</td>  <!--Credits aus Modulerfassung-->
-                  <td>{{(modul['credits']*1800}}</td> <!--Allgemeiner Aufwand berechnen -->
+                  <td>{{modul['credits']*1800}}</td> <!--Allgemeiner Aufwand berechnen -->
                   <td><a href="{{ url_for('lernzeitdetail', modul_name=modul['modulname']) }}">{{modul['lernzeit_gesamt']}}</a></td>              <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand (Credits mal xx h--> 
                   <td>{{(modul['credits']*1800)- modul['lernzeit_gesamt']}} </td>        <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand - summe Lernzeit-->
-                  <td><a href="{{ url_for('modulbearbeiten') }}">Modulnote</a></td>          <!--Platzhalter für Verlinkung -> Benutzereingabe Modulnote-->
+                  <td><a href="{{ url_for('modulbearbeiten', modul_name=modul['modulname']) }}">{% if modul['modulnote'] == "" %}erfassen{%else%}{{modul['modulnote']}}{%endif%}</a></td>          <!--Platzhalter für Verlinkung -> Benutzereingabe Modulnote-->
                 </tr>
                 {% endfor %}
 

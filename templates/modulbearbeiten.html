@@ -6,47 +6,52 @@
 <div class="container">
   <h1>Modul bearbeiten</h1>
 
+  {%if daten%}
   <form class="mt-5" method="POST">
     <div class="form-group">
         <label for="exampleFormControlSelect1">Semester</label>
         <select class="form-control" id="exampleFormControlSelect1" name="semester">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
+              <option {%if daten['semester'] == 1 %}selected{%endif%}>1</option>
+              <option {%if daten['semester'] == 2 %}selected{%endif%}>2</option>
+              <option {%if daten['semester'] == 3 %}selected{%endif%}>3</option>
+              <option {%if daten['semester'] == 4 %}selected{%endif%}>4</option>
+              <option {%if daten['semester'] == 5 %}selected{%endif%}>5</option>
+              <option {%if daten['semester'] == 6 %}selected{%endif%}>6</option>
+              <option {%if daten['semester'] == 7 %}selected{%endif%}>7</option>
+              <option {%if daten['semester'] == 8 %}selected{%endif%}>8</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="exampleFormControlInput1">Modulname</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="modulname" placeholder="Name des Moduls" maxlength="60" required>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="modulname" placeholder="Name des Moduls" value="{{ daten['modulname'] }}" maxlength="60" required>
       </div>
       
       <div class="form-group">
         <label for="exampleFormControlSelect1">Anzahl Credits</label>
         <select class="form-control" id="exampleFormControlSelect1" name="credits">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
+              <option {%if daten['credits'] == 1 %}selected{%endif%}>1</option>
+              <option {%if daten['credits'] == 2 %}selected{%endif%}>2</option>
+              <option {%if daten['credits'] == 3 %}selected{%endif%}>3</option>
+              <option {%if daten['credits'] == 4 %}selected{%endif%}>4</option>
+              <option {%if daten['credits'] == 5 %}selected{%endif%}>5</option>
+              <option {%if daten['credits'] == 6 %}selected{%endif%}>6</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="exampleFormControlInput1">Modulnote</label>
-        <input type="number" class="form-control" id="exampleFormControlInput1" name="modulnote" placeholder="Modulnote" required >
+        <input type="number" class="form-control" id="exampleFormControlInput1" name="modulnote" placeholder="Modulnote" value="{{ daten['modulnote'] }}" >
       </div>
 
+      <input type="hidden" name="modul_key" value="{{ modul_key }}">
       <button class="btn btn-primary" type="submit">Bestätigen </button>
       <a class="btn btn-primary" href="{{ url_for('moduluebersicht') }}">Zurück zur Übersicht</a>
 
 </form>
+{% else %}
+<h1>Kein Modul vorhanden</h1>
+{% endif %}
       
 
 {% include "footer.html" %}

@@ -5,7 +5,6 @@ from flask import request
 from flask import url_for
 from libs import datenspeichern_modul
 from libs import datenspeichern_lernzeit
-from libs import modul_bearbeiten
 
 app = Flask("Lernaufwandrechner")
 
@@ -32,15 +31,21 @@ def moduluebersicht():
     return render_template("moduluebersicht.html", daten=modul_daten)
 
 
-@app.route("/modulbearbeiten", methods=['GET', 'POST'])
-def modulbearbeiten():
+@app.route("/modulbearbeiten/<modul_name>", methods=['GET', 'POST'])
+def modulbearbeiten(modul_name):
     #Dieser Teil brauche ich für die Variabelverwendung in der Python-Datei: datenspeichern_modul
     if request.method == 'POST':
         modulname = request.form['modulname']
-        credits = request.form['credits']
+        credit = request.form['credits']
         semester = request.form['semester']
         modulnote = request.form['modulnote']
-    return render_template("modulbearbeiten.html")
+        modul_key = request.form['modul_key']
+        returned_data = datenspeichern_modul.modul_bearbeiten(modul_key, modulname, credit, semester, modulnote)
+
+        return redirect(url_for('moduluebersicht'))
+
+    modul_daten = datenspeichern_modul.load_json()
+    return render_template("modulbearbeiten.html", daten=modul_daten['module'][modul_name], modul_key=modul_name)
 
 
 @app.route("/lernzeitdetail/<modul_name>", methods=['GET', 'POST'])
