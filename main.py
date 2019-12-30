@@ -21,8 +21,7 @@ def modulerfassen():
         modulname = request.form['modulname']
         credit = request.form['credits']
         semester = request.form['semester']
-        vorlesungen = request.form['vorlesungen']
-        returned_data = datenspeichern_modul.modul_speichern(modulname, credit, semester, vorlesungen)
+        returned_data = datenspeichern_modul.modul_speichern(modulname, credit, semester)
     return render_template("modulerfassen.html")
 
 
@@ -40,7 +39,6 @@ def modulbearbeiten():
         modulname = request.form['modulname']
         credits = request.form['credits']
         semester = request.form['semester']
-        vorlesungen = request.form['vorlesungen']
         modulnote = request.form['modulnote']
     return render_template("modulbearbeiten.html")
 

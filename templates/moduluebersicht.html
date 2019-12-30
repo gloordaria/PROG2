@@ -19,12 +19,12 @@
             <tbody>
                 {% for modul in daten['module'].values()%}
                 <tr>
-                  <th scope="row">{{modul['semester']}}</th>     <!--Platzhalter für Verlinkung -> Semester aus Modulerfassung-->
-                  <td><a href="{{ url_for('modulbearbeiten') }}">{{modul['modulname']}}</a></td> 
-                  <td>{{modul['credits']}}</td>                  <!--Platzhalter für Verlinkung -> Credits aus Modulerfassung-->
-                  <td>{{(modul['credits']*1800 - modul['vorlesungen']*60)}}</td>       <!--Platzhalter für Verlinkung -> Allgemeiner Aufwand berechnen ((Anzahl Credits*30) - (Anzahl Vorlesungen*1)-->
+                  <th scope="row">{{modul['semester']}}</th>     <!--Semester -->
+                  <td><a href="{{ url_for('modulbearbeiten') }}">{{modul['modulname']}}</a></td> <!-- Modulname mit Verlinkung zu Modulbearbeiten-->
+                  <td>{{modul['credits']}}</td>  <!--Credits aus Modulerfassung-->
+                  <td>{{(modul['credits']*1800}}</td> <!--Allgemeiner Aufwand berechnen -->
                   <td><a href="{{ url_for('lernzeitdetail', modul_name=modul['modulname']) }}">{{modul['lernzeit_gesamt']}}</a></td>              <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand (Credits mal xx h--> 
-                  <td>{{(modul['credits']*1800 - modul['vorlesungen']*60)- modul['lernzeit_gesamt']}} </td>        <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand - summe Lernzeit-->
+                  <td>{{(modul['credits']*1800)- modul['lernzeit_gesamt']}} </td>        <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand - summe Lernzeit-->
                   <td><a href="{{ url_for('modulbearbeiten') }}">Modulnote</a></td>          <!--Platzhalter für Verlinkung -> Benutzereingabe Modulnote-->
                 </tr>
                 {% endfor %}
