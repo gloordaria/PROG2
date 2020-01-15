@@ -2,34 +2,40 @@
 {% include "navigation.html" %}
 
 <div class="container">
-  <h1>Modulübersicht</h1>
-<div class="table-responsive-sm mt-5">
-  {% if daten %}
-    <table class="table">
-        <thead>
-            <tr>
-              <th scope="col">Semester</th>         <!--Spaltenkopf erste Spalte-->
-              <th scope="col">Modulname</th>        <!--Spaltenkopf zweite Spalte--> 
-              <th scope="col">Anzahl Credits</th>
-              <th scope="col">Aufwand insgesammt (min)</th>
-              <th scope="col">Lernaufwand (min)</th>
-              <th scope="col">Verbliebene Zeit (min)</th>
-              <th scope="col">Modulnote</th>
-            </tr>
-            <tbody>
-                {% for modul in daten['module'].values()%}
-                <tr>
-                  <th scope="row">{{modul['semester']}}</th>     <!--Semester -->
-                  <td><a href="{{ url_for('modulbearbeiten', modul_name=modul['modulname']) }}">{{modul['modulname']}}</a></td> <!-- Modulname mit Verlinkung zu Modulbearbeiten-->
-                  <td>{{modul['credits']}}</td>  <!--Credits aus Modulerfassung-->
-                  <td>{{modul['credits']*1800}}</td> <!--Allgemeiner Aufwand berechnen -->
-                  <td><a href="{{ url_for('lernzeitdetail', modul_name=modul['modulname']) }}">{{modul['lernzeit_gesamt']}}</a></td>              <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand (Credits mal xx h--> 
-                  <td>{{(modul['credits']*1800)- modul['lernzeit_gesamt']}} </td>        <!--Platzhalter für Verlinkung -> Berechnung Lernaufwand - summe Lernzeit-->
-                  <td><a href="{{ url_for('modulbearbeiten', modul_name=modul['modulname']) }}">{% if modul['modulnote'] == "" %}erfassen{%else%}{{modul['modulnote']}}{%endif%}</a></td>          <!--Platzhalter für Verlinkung -> Benutzereingabe Modulnote-->
-                </tr>
-                {% endfor %}
+  <br>
+  <br>
 
-          </thead>
+  <h1>Modulübersicht</h1>
+
+  <div class="table-responsive-sm mt-5">
+    {% if daten %}
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Semester</th>     <!--Spaltenkopf erste Spalte-->
+          <th scope="col">Modulname</th>    <!--Spaltenkopf zweite Spalte-->
+          <th scope="col">Anzahl Credits</th>
+          <th scope="col">Aufwand insgesammt (min)</th>
+          <th scope="col">Lernaufwand (min)</th>
+          <th scope="col">Verbliebene Zeit (min)</th>
+          <th scope="col">Modulnote</th>
+        </tr>
+      <tbody>
+        {% for modul in daten['module'].values()%}    <!--For-Schleife um alle Werte des Json-Dictionaries zu durchlaufen und auszugeben-->
+
+        <tr>
+          <th scope="row">{{modul['semester']}}</th>  <!--Semester aus Modulerfassung-->
+          <td><a href="{{ url_for('modulbearbeiten', modul_name=modul['modulname']) }}">{{modul['modulname']}}</a></td> <!-- Modulname mit Verlinkung zu Modulbearbeiten-->
+          <td>{{modul['credits']}}</td>    <!--Credits aus Modulerfassung-->
+          <td>{{modul['credits']*1800}}</td>  <!--Allgemeiner Aufwand berechnen -->
+          <td><a href="{{ url_for('lernzeitdetail', modul_name=modul['modulname']) }}">{{modul['lernzeit_gesamt']}}</a></td> <!-- Verbliebener Lernaufwand (Allgemeiner Aufwand - Summe aller Lernaufwände) Berechnung in Datei datenspeichern_lernzeit.py -->
+          <td>{{(modul['credits']*1800)- modul['lernzeit_gesamt']}} </td>
+          <td><a href="{{ url_for('modulbearbeiten', modul_name=modul['modulname']) }}">{% if modul['modulnote'] == "" %}erfassen{%else%}{{modul['modulnote']}}{%endif%}</a></td> <!-- Ist doch keine Note erfasst, setht erfassen und sonst die erfasste Note-->
+          <!--Platzhalter für Verlinkung -> Benutzereingabe Modulnote-->
+        </tr>
+        {% endfor %}
+        </thead>
     </table>
     {% else %}
     <h1>Keine Module erfasst</h1>

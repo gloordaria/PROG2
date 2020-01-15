@@ -2,57 +2,67 @@
 {% include "navigation.html" %}
 
 
-
 <div class="container">
+  <br>
+  <br>
+
   <h1>Modul bearbeiten</h1>
 
-  {%if daten%}
+  {%if daten%}   <!--If-Schleife damit mit den Formulardaten gearbeitet werden kann-->
   <form class="mt-5" method="POST">
+
+    <!--Bearbeitung Semester-->
     <div class="form-group">
-        <label for="exampleFormControlSelect1">Semester</label>
-        <select class="form-control" id="exampleFormControlSelect1" name="semester">
-              <option {%if daten['semester'] == 1 %}selected{%endif%}>1</option>
-              <option {%if daten['semester'] == 2 %}selected{%endif%}>2</option>
-              <option {%if daten['semester'] == 3 %}selected{%endif%}>3</option>
-              <option {%if daten['semester'] == 4 %}selected{%endif%}>4</option>
-              <option {%if daten['semester'] == 5 %}selected{%endif%}>5</option>
-              <option {%if daten['semester'] == 6 %}selected{%endif%}>6</option>
-              <option {%if daten['semester'] == 7 %}selected{%endif%}>7</option>
-              <option {%if daten['semester'] == 8 %}selected{%endif%}>8</option>
-        </select>
-      </div>
+      <label for="exampleFormControlSelect1">Semester</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="semester" required>
+        <option {%if daten['semester'] == 1 %}selected{%endif%}>1</option>  <!--Damit bei der Bearbeitung der Module jeweis das richtige Semester  bereits ausgewählt ist, muss überprüft werden. welche Anzahl bei der Erfassung des Moduls ausgewählt wurde. Dies geschieht mittels überprüfung mit If-->
+        <option {%if daten['semester'] == 2 %}selected{%endif%}>2</option>
+        <option {%if daten['semester'] == 3 %}selected{%endif%}>3</option>
+        <option {%if daten['semester'] == 4 %}selected{%endif%}>4</option>
+        <option {%if daten['semester'] == 5 %}selected{%endif%}>5</option>
+        <option {%if daten['semester'] == 6 %}selected{%endif%}>6</option>
+        <option {%if daten['semester'] == 7 %}selected{%endif%}>7</option>
+        <option {%if daten['semester'] == 8 %}selected{%endif%}>8</option>
+      </select>
+    </div>
 
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Modulname</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="modulname" placeholder="Name des Moduls" value="{{ daten['modulname'] }}" maxlength="60" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Anzahl Credits</label>
-        <select class="form-control" id="exampleFormControlSelect1" name="credits">
-              <option {%if daten['credits'] == 1 %}selected{%endif%}>1</option>
-              <option {%if daten['credits'] == 2 %}selected{%endif%}>2</option>
-              <option {%if daten['credits'] == 3 %}selected{%endif%}>3</option>
-              <option {%if daten['credits'] == 4 %}selected{%endif%}>4</option>
-              <option {%if daten['credits'] == 5 %}selected{%endif%}>5</option>
-              <option {%if daten['credits'] == 6 %}selected{%endif%}>6</option>
-        </select>
-      </div>
+    <!--Bearbeitung Modulname -->
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Modulname</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name="modulname"
+        placeholder="Name des Moduls" value="{{ daten['modulname'] }}" maxlength="60" required> <!--Auch hier soll der Modulname auch bereits angegeben werden-->
+    </div>
 
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Modulnote</label>
-        <input type="number" class="form-control" id="exampleFormControlInput1" name="modulnote" placeholder="Modulnote" value="{{ daten['modulnote'] }}" >
-      </div>
+    <!--Bearbeitung Credits -->
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Anzahl Credits</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="credits">
+        <option {%if daten['credits'] == 1 %}selected{%endif%}>1</option>  <!--Gleich wie beim Semester-->
+        <option {%if daten['credits'] == 2 %}selected{%endif%}>2</option>
+        <option {%if daten['credits'] == 3 %}selected{%endif%}>3</option>
+        <option {%if daten['credits'] == 4 %}selected{%endif%}>4</option>
+        <option {%if daten['credits'] == 5 %}selected{%endif%}>5</option>
+        <option {%if daten['credits'] == 6 %}selected{%endif%}>6</option>
+      </select>
+    </div>
 
-      <input type="hidden" name="modul_key" value="{{ modul_key }}">
-      <button class="btn btn-primary" type="submit">Bestätigen </button>
-      <a class="btn btn-primary" href="{{ url_for('moduluebersicht') }}">Zurück zur Übersicht</a>
+    <!--Hinzufügen einer Modulnote -->
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Modulnote</label>
+      <input type="number" class="form-control" id="exampleFormControlInput1" name="modulnote" max="6" placeholder="Modulnote"
+        value="{{ daten['modulnote'] }}">       <!--Nicht höher als Note 6 -->
+    </div>
 
-</form>
-{% else %}
-<h1>Kein Modul vorhanden</h1>
-{% endif %}
-      
+    <input type="hidden" name="modul_key" value="{{ modul_key }}">  <!--Der Modul-key ist der Modulname-->
+    <button class="btn btn-primary" type="submit">Bestätigen </button>
+    <a class="btn btn-primary" href="{{ url_for('moduluebersicht') }}">Zurück zur Modulübersicht</a>
+    
+  </form>
 
-{% include "footer.html" %}
-   
+  {% else %}
+  <h1>Kein Modul vorhanden</h1>
+  {% endif %}
+
+</div>
+
+  {% include "footer.html" %}

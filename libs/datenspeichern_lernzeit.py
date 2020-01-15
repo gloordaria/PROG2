@@ -1,11 +1,10 @@
 import json
-from libs import datenspeichern_modul
-from datetime import datetime
+from libs import datenspeichern_modul  #Damit ich die Funktionen nutzen kann
+from datetime import datetime          #Damit ich mit den Datum arbeiten kann
 
-def zeit_speichern(modul_name, datum, lernzeit, kommentare):
+def zeit_speichern(modul_name, datum, lernzeit, kommentare):  #Funktion eine erfasste Lernzeit in der Liste zu speichern
     modul_daten = datenspeichern_modul.load_json()
-    json_daten = load_json()
-    #liste_lernzeiten = json_daten.get("lernzeiten", {})
+    json_daten = load_json()                            #Die Lerneinträge sollen zu einem Mdoul zugeweisen werden und deswegen betrifft es dasselbe Dictionary 
     
     lerneintrag = {
         "datum": datum,
@@ -13,14 +12,12 @@ def zeit_speichern(modul_name, datum, lernzeit, kommentare):
         "kommentare": kommentare 
     }
 
-    zeitstempel = str(datetime.now())
+    zeitstempel = str(datetime.now())                                         #Damit jeder Eintrag einen eindeutigen Key hat
     modul_daten["module"][modul_name]["lernzeiten"][zeitstempel] = lerneintrag
 
-    lernzeit_gesamt = int(modul_daten["module"][modul_name]["lernzeit_gesamt"]) + int(lernzeit)
+    lernzeit_gesamt = int(modul_daten["module"][modul_name]["lernzeit_gesamt"]) + int(lernzeit)   #Die gesammte Lernzeit errechnet sich aus der lernzeit plus dem neuen Eintrag
     modul_daten["module"][modul_name]["lernzeit_gesamt"] = lernzeit_gesamt
 
-    # liste_lernzeiten[datum] = lerneintrag                  #--> fraglich ob das Sinn macht, da Datum als Key gelten würde
-    #json_daten["lernzeiten"] = liste_lernzeiten
 
     json_daten["module"] = modul_daten["module"]
     save_to_json(json_daten)

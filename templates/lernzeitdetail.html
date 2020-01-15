@@ -2,72 +2,88 @@
 {% include "navigation.html" %}
 
 <div class="container">
-<div class="table-responsive-sm mt-5">
-  
+  <br>
+  <br>
+
   <h2>Wie viel Zeit hast du heute für das Modul aufgewendet?</h2>
   <p></p>
 
-  <form method="POST">
-    <div class = "row">
-      <div class="col-2">
+  <!--Eine neue Lernzeit erfassen-->
+  <form class="mt-5" method="POST">
+    <div class="row">
+
+      <!--Datum erfassen-->
+      <div class="col-sm-2 ">
         <label for="exampleFormControlInput1">Datum</label>
         <input type="date" class="form-control" name="datum" placeholder="Datum" required>
       </div>
-      
-      <div class="col-2">
+
+      <!--Anzahl Minuten eingeben-->
+      <div class="col-sm-2">
         <label for="exampleFormControlInput1">Anzahl Lernminuten</label>
-        <input type="number" class="form-control" name = "lernzeit" placeholder="Anzahl Minuten" max="1440" required>
+        <input type="number" class="form-control" name="lernzeit" placeholder="Anzahl Minuten" max="1440" required>
       </div>
     </div>
 
-    <div class = "row"><p></p></div>
-    
-    <div class = "row">
-      <div class="col-4">
+    <!--Abstand-->
+    <div class="row">
+      <p></p>
+    </div>
+
+    <!--Kommentare wenn gewünsch-->
+    <div class="row">
+      <div class="col-sm-4">
         <label for="exampleFormControlTextarea1">Kommentare</label>
         <input type="text" class="form-control" id="exampleFormControlTextarea1" maxlength="90" name="kommentare" row="3">
       </div>
     </div>
-    
-    <div class = "row"><p></p></div>
 
+    <!--Abstand-->
+    <div class="row">
+      <p></p>
+    </div>
+
+    <!--Buttons um eine Lernzeit zu erfassen und um auf die Modulübersicht zurückzukehren-->
     <button class="btn btn-primary" type="submit">Erfassen</button>
-    <a class="btn btn-primary" href="{{ url_for('moduluebersicht') }}">Zur Modulübersicht</a>
+    <a class="btn btn-primary" href="{{ url_for('moduluebersicht') }}">Zurück zur Modulübersicht</a>
 
   </form>
 
-  
 
   <br></br>
 
 
-
-
-
   <!--Auflistung Lernzeiten-->
-  <div class="table-responsive-sm mt-5"></div>
-  {%if daten%}    
+  <div class="table-responsive-sm mt-5">
+
+    {%if daten%}
+    <!--If-Schleife damit mit den Formulardaten gearbeitet werden kann-->
+
     <table class="table">
-        <thead>
-            <tr>
-              <th scope="col">Datum</th>         <!--Spaltenkopf erste Spalte-->
-              <th scope="col">Lernzeit</th>        <!--Spaltenkopf zweite Spalte--> 
-              <th scope="col">Kommentare</th>
-            </tr>              
-            <tbody>
-              {% for lerneintrag in daten['lernzeiten'].values()%}
-                <tr>
-                  <th scope="row">{{lerneintrag['datum']}}</th>     
-                  <td>{{lerneintrag['lernzeit']}}</td>                
-                  <td>{{lerneintrag['kommentare']}}</td>                          
-                </tr>
-                {% endfor %}
-          </thead>
+      <thead>
+        <tr>
+          <th scope="col">Datum</th>          <!--Spaltenkopf erste Spalte-->
+          <th scope="col">Lernzeit</th>       <!--Spaltenkopf zweite Spalte-->
+          <th scope="col">Kommentare</th>      <!--Spaltenkopf dritte Spalte-->
+        </tr>
+
+      <tbody>
+        {% for lerneintrag in daten['lernzeiten'].values()%}   <!--For-Schleife für die Lernzeiterfassungen / alle json-Elemente werden ausgegeben-->
+        <tr>
+          <th scope="row">{{lerneintrag['datum']}}</th>     <!--Datum des Lerneintrags-->
+          <td>{{lerneintrag['lernzeit']}}</td>             <!--Dauer des Lerneintrags-->
+          <td>{{lerneintrag['kommentare']}}</td>           <!--Kommentare des Lerneintrags-->
+        </tr>
+        {% endfor %}
+        </thead>
     </table>
+  </div>
     {% else %}
-    <h1>Keine Lerneinträge erfasst</h1>
-    {% endif %}
-                
+
+  <h1>Keine Lerneinträge erfasst</h1>    <!--Sollte noch kein Eintrag gemacht worden sein kommt diese Meldung-->
+  
+  {% endif %}
 </div>
-</div>
+
+
 {% include "footer.html" %}

@@ -1,49 +1,56 @@
 {% include "header.html" %}
 {% include "navigation.html" %}
 
-<head>
-  <title>Neues Modul erfassen</title>
-</head>
 
 <div class="container">
+  <br>
+  <br>
+
   <h1>Modul erfassen</h1>
-<form class="mt-5" method="POST">
-  
+
+  <!--Erfassung eines neuen Moduls-->
+  <form class="mt-5" method="POST">
+    
+    <!--Semester bis max. 8-->
     <div class="form-group">
-        <label for="exampleFormControlSelect1">Semester</label>
-        <select class="form-control" id="exampleFormControlSelect1" name="semester">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-        </select>
-      </div>
+      <label for="exampleFormControlSelect1">Semester</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="semester" required>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+      </select>
+    </div>
 
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Modulname</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" maxlength="60" name="modulname" placeholder="Name des Moduls" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Anzahl Credits</label>
-        <select class="form-control" id="exampleFormControlSelect1" name="credits">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-        </select>
-      </div>
+    <!--Erfassung Modulname-->
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Modulname</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" maxlength="60" name="modulname"
+        placeholder="Name des Moduls" required>
+    </div>
 
-      <button class="btn btn-primary" type="submit">Bestätigen</button>
-      <a class="btn btn-primary" href="{{ url_for('moduluebersicht') }}">Zur Modulübersicht</a>
-</form>
+    <!--Auswahl Credits bis max. 6-->
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Anzahl Credits</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="credits" required>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Bestätigen</button>
+    <a class="btn btn-primary" href="{{ url_for('moduluebersicht') }}">Zur Modulübersicht</a>
+    <a class="btn btn-primary" href="{{ url_for('startseite') }}">Zur Startseite</a>
+    
+  </form>
 </div>
 
 {% include "footer.html" %}
-   
