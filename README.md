@@ -1,17 +1,19 @@
-Projektidee Daria Gloor
---> Lernufwandrechner f�r das Studium
+prog 2 - Projektidee Daria Gloor
+Lernufwandrechner f�r das Studium
 
-Ausgangslage:
-Anfangs Semester wird vorgegeben, welche Module absolviert werden und wie diese gewichtet sind. Nun stellt sich aber immer die Frage, wie viel Zeit man in ein Modul stecken soll.
-Hier kann der Lernaufwandrechner helfen! Mit diesem können neue Module mit der entsprechenden Anzahl Credits erfasst und somit wird der Gesamtaufwand dargestellt. Während des Semesters können neue Lerneinträge erstellt werden und der verblibene Zeitaufwand wird angezeigt. 
+Ausgangslage
+Anfangs Semester wird vorgegeben, welche Module absolviert werden und wie diese gewichtet sind. Nun stellt sich aber immer die Frage, wie viel Zeit man in ein Modul stecken soll?
+Hier kann der Lernaufwandrechner helfen! 
 
-Jedes Modul im Studium ist mit sogenannten Credits gewichtet. Je nach H�he der Credits ist der empfohlene Lernaufwand unterschriedlich.
-Damit anfangs Semester klar ist, wie viel Zeit ein Modul beansprucht um die Wochen- und Lernplanung optimal zu gestalten
+Er soll Auskunft darüber geben wie viel Aufwand pro Modul ansteht und wie viel Aufwand nach Abzug der Lernaktivitäten noch verbleibt. Somit soll eine bessere Lernplanung während dem Semester gewährleistet werden, damit man während der Lernphase am Ende des Semesters nicht in den Stress kommt --> zumindest nicht aufgrund der Unwissenheit bezüglich des nötigen Lernaufwands ;)
 
 Funktion/Projektidee:
-Die Idee ist es ein Portfolio zu gestalten, worin am Anfang vom Semester die Module und die entsprechenden Credits eingegeben werden können und  angezeigt wird, wie viel Aufwand jedes Modul verursacht. W�hrend dem Semester sollen Lerneinträge, wie Vorlesungen, Zusammenfassungen, Nachbearbeitung usw. erfasst werden. Die verbliebene Lernzeit soll in einer Übersicht jederzeit angezeigt werden, damit man die Wochenplanung besser vornehmen kann. Am Ende des Semesters bestetht die Möglichkeit die Modulnato einzutragen und so ein persönliches Fazit zu ziehen. 
-
+Die Applikation ist dafür gedacht Studenten bei der Einteilung ihrer Lernzeit zu unterstützen. 
+Am Anfang vom Semester sollen die Module und die entsprechenden Credits eingegeben werden und auf der Übersicht angezeigt werden wie hoch die empfohlene Lernzeit, aufgrund der Eingabe, für jedes Modul ist. W�hrend dem Semester sollen Lerneinträge wie Vorlesungen, Zusammenfassungen, Nachbearbeitung usw. erfasst werden. Die verbliebene Lernzeit soll in der Übersicht jederzeit angezeigt werden. Das kann helfen eine bessere Lernplanung vorzunehmen. Am Ende des Semesters bestetht die Möglichkeit die Modulnate einzutragen und so ein persönliches Fazit zu ziehen. 
+ 
 Workflow:
+
+
 - Dateneingabe
 Um ein neues Modul zu erfassen navigiert der User wia Startseite oder Navigation auf die Seite modulerfassen.html und füllt die Pflichtfelder Semester, Modulname und Credits aus. Während des Semesters kann der User die Lernzeiten über die Seite lernzeitdetail.html mit Datum, Lernzeit und optional einem Kommentar erfassen. Am Schluss des Semesters, nach bekanntgabe der Noten, kann diese Information über die Seite modulbearbeiten.html ebenfalls eingegeben werden.
 
