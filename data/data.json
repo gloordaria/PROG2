@@ -15,20 +15,6 @@
                 }
             }
         },
-        "Master try again harder": {
-            "modulname": "Master try again harder",
-            "credits": 6,
-            "semester": 4,
-            "lernzeit_gesamt": 60,
-            "modulnote": "5",
-            "lernzeiten": {
-                "2020-01-04 20:37:32.433765": {
-                    "datum": "2020-01-04",
-                    "lernzeit": "60",
-                    "kommentare": "Did nothing productive"
-                }
-            }
-        },
         "User Research & Workshopmoderation": {
             "modulname": "User Research & Workshopmoderation",
             "credits": 4,
