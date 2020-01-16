@@ -14,10 +14,10 @@ Die Applikation ist dafür gedacht Studenten bei der Einteilung ihrer Lernzeit z
 ## Workflow
 
 ### Ablaufdiagramm
-![Ablaufdiagramm](C:\Users\daria\prog2\lar\static\Ablaufdiagramm_Screens.jpg "Ablaufdiagramm")
+![Ablaufdiagramm](readme/Ablaufdiagramm_Screens.jpg)
 
 ### Wireframe
-![Wireframe](\static\Wireframe.JPG)
+![Wireframe](readme/Wireframe.JPG)
 
 ### Dateneingabe
 Um ein neues Modul zu erfassen navigiert der User wia Startseite oder Navigation auf die Seite modulerfassen.html und füllt die Pflichtfelder Semester, Modulname und Credits aus. Während des Semesters kann der User die Lernzeiten über die Seite lernzeitdetail.html mit Datum, Lernzeit und optional einem Kommentar erfassen. Am Schluss des Semesters, nach Bekanntgabe der Noten, kann diese Information über die Seite modulbearbeiten.html ebenfalls eingegeben werden.
@@ -39,45 +39,63 @@ Die eingegebenen Formulardaten von der Erfassung der Module, Lernzeiten und Modu
 ### Am Anfang des Semesters - Ein neues Modul erfassen 
 1. Man startet auf der Startseite und hat die Möglichkeit ein Modul zu erfassen oder in die Modulübersicht zu wechseln.
 	a. Wenn noch keine Module erfasst sind, ist die Übersicht leer. 
+
+![Startseite](readme/startseite.JPG)
 	
 2. Um ein neues Modul zu erfassen auf den Button "Ein neues Modul erfassen" klicken. 
 
-3. Eingaben entsprechend vornehmn: 
+3. Eingaben entsprechend vornehmen: 
 	a. Semester wia Dropdown auswählen
 	b. Modulnamen eingeben
 	c. Anzahl Credits via Dropdown auswählen
 
-4. Mit dem Button "Bestätigen" das Modul erfassen
+![Modul erfassen](readme/modul_erfassen.JPG)
+
+4. Mit dem Button "Bestätigen" wird das Modul erfasst
 	
 4. Um die Einträge zu sehen nun via Button "Zur Modulübersicht" auf die Modulübersicht navigieren
 
 5. Hier sind die eingegebenen Modulinformationen einsehbar und zusätzlich wurde der Gesamtlernaufwand in der Spalte "Aufwand insgesammt (min)" berechnet
+
+![Modulübersicht](readme/moduluebersicht_aufwand_gesammt.JPG)
 
 ### Während des Semesters - Lerneinträge erfassen 
 1. Modulübersicht wia Startseite oder Navigation öffnen
 
 2. In der Spalte Lernaufwand auf die unterstrichene Zahl klicken
 	a. Ist noch kein Aufwand erfasst, auf die unterstrichene Null klicken
+
+![Modulübersicht](readme/moduluebersicht_lernaufwand.JPG)
 	
 3. Nun kann der Lernaufwand erfasst werden mit den Eingaben:
 	a. Datum
 	b. Lernzeit (in Minuten)
 	c. Optional einen Kommentar erfassen
+
+![Lernzeit erfassen](readme/lernzeit_erfassen.JPG)
 	
 4. Der erfasste Eintrag wird der Liste unterhalb hinzugefügt
 
+![Lernzeit erfassen](readme/lernzeit_erfassen_liste.JPG)
+
 5. Navigiert man zurück auf die Modulübersicht, ist die erfasste Lernzeit ersichtlich und es wird angezeigt, wie viel Lernaufwand noch übrig bleibt
 	a. Nach jeder weiteren Erfassung der Lernzeit werden sich diese beiden Zahlen entsprechend verändern
+
+![Modulübersicht](readme/moduluebersicht_aufwand_lern_verblieben.JPG)
 
 ### Änderungen der Modulinformationen
 1. Modulübersicht wia Startseite oder Navigation öffnen
 
 2. In der Spalte Modulname auf den unterstrichenen Modulnamen klicken
 
+![Modulübersicht](readme/moduluebersicht_modulname.JPG)
+
 3. Hier hat man die Möglichkeit Änderungen zu den eingegebenen Modulinformationen vorzunehmen:
 	a. Semester
 	b. Modulname
 	c. Credits
+	
+![Modul bearbeiten](readme/modul_bearbeiten.JPG)
 	
 4. Für die erfolgreiche Änderung auf den Button "Bestätigen" klicken
 
@@ -88,7 +106,11 @@ Die eingegebenen Formulardaten von der Erfassung der Module, Lernzeiten und Modu
 
 2. In der Spalte Modulnote auf das unterstrichene Wort "erfassen" klicken 
 
+![Note hinzufügen](readme/moduluebersicht_note.JPG)
+
 3. Modulnote im entsprechenden Feld eintragen und auf den Button "Bestätigen" klicken
+
+![Note hinzufügen](readme/modul_bearbeiten_note.JPG)
 
 4. Direkte Weiterleitung an die Modulübersicht 
 
