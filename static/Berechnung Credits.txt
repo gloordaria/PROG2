@@ -1,8 +1,13 @@
-Berechnung Credits
+Logik: Berechnung Credits
 
-1 Credit = 30 Stunden Aufwand
-1 Letion Kontaktunterricht = 1 Stunde
-
+1 Credit = 30 Stunden Aufwand = 1'800 Minuten
 
 1 Semester = 900 Stunden = 30 Credits
 6 Semester = 5400 Stunden = 180 Credits
+
+
+Logik: Berechnung Aufwände
+
+aufwand_insgesamt = moduluebersicht.html_Anzahl Credits * 1'800 Minuten 
+aufwand_lernen = Summe aus allen Lernzeiten in lernzeitdetail.html
+verbliebene_zeit = aufwand_insgesammt - aufwand_lernen
