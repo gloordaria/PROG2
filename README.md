@@ -14,10 +14,10 @@ Die Applikation ist dafür gedacht Studenten bei der Einteilung ihrer Lernzeit z
 ## Workflow
 
 ### Ablaufdiagramm
-![Ablaufdiagramm](C:\Users\daria\prog2\lar\static\Ablaufdiagramm_Screens.jpg "Ablaufdiagramm")
+![Ablaufdiagramm](static/Ablaufdiagramm_Screens.jpg)
 
 ### Wireframe
-![Wireframe](\static\Wireframe.JPG)
+![Wireframe](static/readme/Wireframe.JPG)
 
 ### Dateneingabe
 Um ein neues Modul zu erfassen navigiert der User wia Startseite oder Navigation auf die Seite modulerfassen.html und füllt die Pflichtfelder Semester, Modulname und Credits aus. Während des Semesters kann der User die Lernzeiten über die Seite lernzeitdetail.html mit Datum, Lernzeit und optional einem Kommentar erfassen. Am Schluss des Semesters, nach Bekanntgabe der Noten, kann diese Information über die Seite modulbearbeiten.html ebenfalls eingegeben werden.
