@@ -15,10 +15,12 @@ Die Applikation ist dafür gedacht Studenten bei der Einteilung ihrer Lernzeit z
 
 ### Ablaufdiagramm
 Zu Beginn der Projektentwicklung wurde das Ablaubdiagramm erstellt
+
 ![Ablaufdiagramm](readme/ablaufdiagramm.jpg)
 
 ### Wireframe
-Es wurden Wireframes entwickelt um das Design der HTML-Seiten der Webapplikation ungefähr zu bestimmen:
+Es wurden Wireframes entwickelt um das Design der HTML-Seiten der Webapplikation ungefähr zu bestimmen.
+
 ![Wireframe](readme/Wireframe.JPG)
 
 ### Dateneingabe
@@ -55,7 +57,7 @@ Die eingegebenen Formulardaten von der Erfassung der Module, Lernzeiten und Modu
 	
 5. Um die Einträge zu sehen nun via Button "Zur Modulübersicht" auf die Modulübersicht navigieren
 
-6. Hier sind die eingegebenen Modulinformationen einsehbar und zusätzlich wurde der Gesamtlernaufwand in der Spalte "Aufwand insgesammt (min)" berechnet
+6. Hier sind die eingegebenen Modulinformationen einsehbar und zusätzlich wurde der Gesamtlernaufwand in der Spalte "Aufwand insgesamt (min)" berechnet
 ![Modulübersicht](readme/moduluebersicht_aufwand_gesammt.JPG)
 
 ### Lerneinträge erfassen 
