@@ -29,10 +29,10 @@ Um ein neues Modul zu erfassen navigiert der User wia Startseite oder Navigation
 ![Flussdiagramm](readme/Flussdiagramm.png)
 
 ### Datenverarbeitung/Speicherung
-Alle Daten werden in der Datei data.json in einem Dictionary gespeichert. Der Modulname dient als Key und alle Informationen zum Modul und alle Lernzeiteneinträge werden dort gespeichert. Die Gesamtlernzeit und die verbliebene Lernzeit wird aufgrund der Eingaben des Users berechnet. Will man die Moduleingaben verändern, ist dies über die Seite modulbearbeiten.html ebenfalls möglich. 
+Alle Formulardaten (erfasst oder verändert) werden in der Datei data.json in einem Dictionary gespeichert. Der Modulname dient als Key und alle Informationen zum Modul und alle Lernzeiteneinträge werden in diesem Dictionary gespeichert. Der Aufwand insgesamt wird in der Modulübersicht angegeben und wird durch die Eingabe der Credits in modulerfassen.html berechnet. Der Lernaufwand errechnet sich aus der Summe aller Lerneinträge aus lerzeitdetail.html. Die verbliebene Lernzeit errechnet sich aus dem Aufwand insgesamt abzüglich des Lernaufwands.   
 
 ### Datenausgabe
-Die eingegebenen Formulardaten von der Erfassung der Module, Lernzeiten und Modulnoten können in der Modulübersicht eingesehen werden. Die Auflistung der Lernzeiten wird separat auf lernzeitdetail.html ausgegeben. Die Berechnungen zum Gesamtlernaufwand und zum verbliebenen Lernaufwand sind ebenfalls in der Modulübersicht zu finden. 
+Die eingegebenen Formulardaten von der Erfassung und Bearbeitung der Module, den Lernzeiten und den Modulnoten können in der Modulübersicht eingesehen werden. Die Auflistung der Lernzeiten wird separat auf lernzeitdetail.html ausgegeben. Der Aufwand insgesamt, der Lernaufwand und die verbliebene Lernzeit sind ebenfalls auf der Modulübersicht zu sehen (Berechnung siehe Datenverarbeitung). 
 
 ### Feinheiten
 - Die Eingabe an Lernaufwand darf 24h nicht überschreiten.
