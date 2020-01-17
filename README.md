@@ -16,7 +16,7 @@ Die Applikation ist dafür gedacht Studenten bei der Einteilung ihrer Lernzeit z
 ### Ablaufdiagramm
 Zu Beginn der Projektentwicklung wurde das Ablaubdiagramm erstellt
 
-![Ablaufdiagramm](readme/Ablaufdiagramm Lernaufwandrechner.jpg)
+![Ablaufdiagramm](readme/ablaufdiagramm.jpg)
 
 ### Wireframe
 Es wurden Wireframes entwickelt um das Design der HTML-Seiten der Webapplikation ungefähr zu bestimmen.
