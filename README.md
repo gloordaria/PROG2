@@ -24,7 +24,8 @@ Es wurden Wireframes entwickelt um das Design der HTML-Seiten der Webapplikation
 ![Wireframe](readme/Wireframe.JPG)
 
 ### Dateneingabe
-Um ein neues Modul zu erfassen navigiert der User wia Startseite oder Navigation auf die Seite modulerfassen.html und füllt die Pflichtfelder Semester, Modulname und Credits im Formular aus. Während des Semesters kann der User die Lernzeiten über die Seite lernzeitdetail.html mit Datum, Lernzeit und optional einem Kommentar in einem Formular erfassen. Am Schluss des Semesters, nach Bekanntgabe der Noten, kann diese Information über die Seite modulbearbeiten.html ebenfalls in einem Formular eingegeben werden.
+Um ein neues Modul zu erfassen navigiert der User wia Startseite oder Navigation auf die Seite modulerfassen.html und füllt die Pflichtfelder Semester, Modulname und Credits im Formular aus. Während des Semesters kann der User die Lernzeiten via Modulübersicht auf der Seite lernzeitdetail.html mit Datum, Lernzeit und optional einem Kommentar in einem Formular erfassen. Es besteht auch die Möglichkeit die eingegebenen Moduldaten via Modulübersicht zu bearbeiten. Am Schluss des Semesters, nach Bekanntgabe der Noten, kann diese Information via Modulübersicht auf der Seite modulbearbeiten.html ebenfalls in einem Formular eingegeben werden.
+![Flussdiagramm](readme/Flussdiagramm.png)
 
 ### Datenverarbeitung/Speicherung
 Alle Daten werden in der Datei data.json in einem Dictionary gespeichert. Der Modulname dient als Key und alle Informationen zum Modul und alle Lernzeiteneinträge werden dort gespeichert. Die Gesamtlernzeit und die verbliebene Lernzeit wird aufgrund der Eingaben des Users berechnet. Will man die Moduleingaben verändern, ist dies über die Seite modulbearbeiten.html ebenfalls möglich. 
