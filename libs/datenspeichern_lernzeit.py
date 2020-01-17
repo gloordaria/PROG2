@@ -38,8 +38,6 @@ def zeit_speichern(modul_name, datum, lernzeit, kommentare):  #Funktion eine erf
 def load_json():
     """
     Ladet alle Module vom json file  
-    Args:
-        json_path: path to json file
     Returns:
         dict: Ein dictionary welches alle Module enthält, wenn das File nicht exisitert wird "File not found" zurückgegeben
     """ 
@@ -59,8 +57,7 @@ def save_to_json(daten):
      Speichert alle Module in the json-datei 
    
     Args:
-        json_path: path to json file
-        daten: alle Module
+        daten: alle Daten aus data.json
     """ 
     with open('data/data.json', "w") as open_file:
         json.dump(daten, open_file)
