@@ -3,6 +3,16 @@ from libs import datenspeichern_modul  #Damit ich die Funktionen nutzen kann
 from datetime import datetime          #Damit ich mit den Datum arbeiten kann
 
 def zeit_speichern(modul_name, datum, lernzeit, kommentare):  #Funktion eine erfasste Lernzeit in der Liste zu speichern
+    """
+    Eine erfasste Lernzeit in die Liste auf lernzeitdetail.html speichern  
+    Args:
+        modul_name: Modulname (Key aus Dictionary in data.json) 
+        datum: Input Datum von Formular in lernzeitdetail.html
+        lernzeit: Input Lernzeit von Formular in lernzeitdetail.html
+        kommentare: Input Kommentar von Formular in lernzeitdetail.html 
+    Returns:
+        dict: Alle Module aus dem dictionary in data.json
+    """
     modul_daten = datenspeichern_modul.load_json()
     json_daten = load_json()                            #Die Lerneinträge sollen zu einem Mdoul zugeweisen werden und deswegen betrifft es dasselbe Dictionary 
     
@@ -26,6 +36,13 @@ def zeit_speichern(modul_name, datum, lernzeit, kommentare):  #Funktion eine erf
 
 
 def load_json():
+    """
+    Ladet alle Module vom json file  
+    Args:
+        json_path: path to json file
+    Returns:
+        dict: Ein dictionary welches alle Module enthält, wenn das File nicht exisitert wird "File not found" zurückgegeben
+    """ 
     json_daten = {}
     try:
         with open('data/data.json') as open_file:    #Json-Datei öffnen/lesen
@@ -38,5 +55,12 @@ def load_json():
 
 
 def save_to_json(daten):
+    """
+     Speichert alle Module in the json-datei 
+   
+    Args:
+        json_path: path to json file
+        daten: alle Module
+    """ 
     with open('data/data.json', "w") as open_file:
         json.dump(daten, open_file)

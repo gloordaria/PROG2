@@ -1,7 +1,17 @@
 import json
 
-def modul_speichern(modulname, credit, semester ):    # Diese Funktion speichert einen neuen Eintrag
-    
+def modul_speichern(modulname, credit, semester ):    
+    """
+    Erfassung eines neuen Modul  
+    Args:
+        modulname: Input Modulname von Formular in modulerfassen.html
+        credit: Input Anzahl Credits von Formular in modulerfassen.html
+        semester: Input welches Semester von Formular in modulerfassen.html
+        modulnote: Input Modulnote von Formular in modulerfassen.html 
+    Returns:
+        dict: Alle Module aus dem dictionary in data.json
+    """
+
     json_daten = load_json()                          
     liste_aller_module = json_daten.get("module", {})    #Hier hole ich die Daten aus dem Dictionary ''module'' und weise sie der Variable zu 
         
@@ -22,6 +32,17 @@ def modul_speichern(modulname, credit, semester ):    # Diese Funktion speichert
     return json_daten                        #Json-Datei mit neuer Eingabe wird zurückgegeben
 
 def modul_bearbeiten(modul_key, modulname, credit, semester, modulnote):   #Funktion zum Bearbeiten eines Moduls
+    """
+    Moduleingaben können bearbeitet weren  
+    Args:
+        modul_key: Falls der Modulname geändert wrid, wird dieser zum neuen Key im dictionary in json
+        modulname: Bisheriger Modulname aus data.json
+        credit: Anzahl Credits aus data.json
+        semester: Semester aus data.json
+        modulnote: Modulnote aus data.json 
+    Returns:
+        dict: Alle Module aus dem dictionary in data.json
+    """ 
     json_daten = load_json()
     liste_aller_module = json_daten.get("module", {})
 
@@ -43,7 +64,15 @@ def modul_bearbeiten(modul_key, modulname, credit, semester, modulnote):   #Funk
     return json_daten
     
 
-def load_json():   #Funktion dient dazu die Einträge vom Dictionary (Json-Datei) zu laden und mit deisen zu arbeiten
+def load_json():  
+    """
+    Ladet alle Module vom json file  
+    Args:
+        json_path: path to json file
+    Returns:
+        dict: Ein dictionary welches alle Module enthält, wenn das File nicht exisitert wird "File not found" zurückgegeben
+    """ 
+
     json_daten = {}
     try:
         with open('data/data.json') as open_file:    #Json-Datei öffnen/lesen
@@ -55,7 +84,14 @@ def load_json():   #Funktion dient dazu die Einträge vom Dictionary (Json-Datei
     return json_daten                               #Alle Einträge in der Json-Datei werden ausgegeben
 
 
-def save_to_json(daten):                #Neue Einträge in die Json-Datei speichern / hinzufügen
+def save_to_json(daten):                
+    """
+     Speichert alle Module in the json-datei 
+   
+    Args:
+        json_path: path to json file
+        daten: alle Module
+    """ 
     with open('data/data.json', "w") as open_file:
         json.dump(daten, open_file)
 
